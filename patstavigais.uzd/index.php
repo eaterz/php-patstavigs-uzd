@@ -36,9 +36,13 @@ public $durvjuskaits;
     public function __construct($initkrasa,$initcena,$initatrums,$initkuragada,$initdurvjuskaits){
         parent::__construct($initkrasa,$initcena,$initatrums,$initkuragada);
         $this->durvjuskaits=$initdurvjuskaits;
+        
     }
     public function getdurvis(){
         return $this->durvjuskaits;
+    }
+    public function setcena($newcena){
+        return $this->cena=$newcena;
     }
 }
 class MercedesAMG extends Car{
@@ -56,11 +60,16 @@ $bmw=new BMW("sarkans","4500 eur","300 km/h","2018 gada","2 durvis");
 $merc=new MercedesAMG("balts","3450 eur","250 km/h","2013 gada","6 riepas");
 
 var_dump($car);
-$car->setkrasa("melns");
 echo "<br><br>";
+echo "Mainu krāsu";
+echo "<br><br>";
+$car->setkrasa("melns");
 echo "Car:"."<br>"."krasa - ".$car->getkrasa()."<br>"."cena - ".$car->getcena()."<br>"."atrums - ".$car->getatrums()."<br>"."izlaišanas gads - ".$car->getkuragada();
 echo "<br><br>";
 var_dump($bmw);
+echo "<br><br>";
+echo "Mainu cenu";
+$bmw->setcena("5000 eur");
 echo "<br><br>";
 echo "BMW:"."<br>"."krasa - ".$bmw->getkrasa()."<br>"."cena - ".$bmw->getcena()."<br>"."atrums - ".$bmw->getatrums()."<br>"."izlaišanas gads - ".$bmw->getkuragada()."<br>"."durvju skaits - ".$bmw->getdurvis();
 echo "<br><br>";
